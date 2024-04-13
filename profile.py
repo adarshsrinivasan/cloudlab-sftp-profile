@@ -21,9 +21,6 @@ pc.defineParameter(
 params = pc.bindParameters()
 # Create a Request object to start building the RSpec.
 request = pc.makeRequestRSpec()
-
-# Create a Request object to start building the RSpec.
-request = pc.makeRequestRSpec()
  
 # Add a raw PC to the request.
 node = request.RawPC("node")
