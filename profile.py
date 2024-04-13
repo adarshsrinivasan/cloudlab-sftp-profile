@@ -1,13 +1,12 @@
-"""Setup up SFTP for the cloudlab user. The node will boot the default operating system, which is typically a recent version of Ubuntu.
-Setup log can be found at /local/repository/setup-<user>.log
-
+"""Setup up SFTP on a Ubuntu server. The node will boot the default operating system, which is typically a recent version of Ubuntu.
+Setup log can be found at /local/repository/setup-<sftp-username>.log
 
 
 Instructions:
-- The setup requires the user to enter their Cloudlab user.
+- The setup requires the user to enter a username and password for the sftp server.
 - Once the experiment is created, wait for the profile instance to start.
-- Run the following command from the host where you want to download/upload files to your Cloudlab SFTP server:
-    `sftp <cloudlab-user>@<CLOUDLAB-SERVER-IP>`
+- Run the following command from the host where you want to download/upload files to the Cloudlab SFTP server:
+    `sftp <sftp-user>@<CLOUDLAB-SERVER-IP>`
 
 """
 
