@@ -5,6 +5,8 @@ printf "Startup script - $1 $2 \n"
 export SFTP_USER=$1
 export SFTP_USER_PWD=$2
 
+sudo apt update
+
 sudo apt install ssh
 
 sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
@@ -23,9 +25,9 @@ sudo systemctl restart sshd
 
 sudo groupadd $SFTP_USER
 
-sudo useradd -G $SFTP_USER -d /srv/$SFTP_USER -s /sbin/nologin $SFTP_USER
+sudo useradd -g $SFTP_USER -d /srv/$SFTP_USER -s /sbin/nologin $SFTP_USER
 
-sudo passwd $SFTP_USER_PWD
+echo -e "$SFTP_USER_PWD\n$SFTP_USER_PWD" | sudo passwd $SFTP_USER
 
 sudo mkdir -p /srv/$SFTP_USER
 
