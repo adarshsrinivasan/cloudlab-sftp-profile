@@ -14,6 +14,14 @@ import geni.rspec.pg as pg
 # Create a portal context.
 pc = portal.Context()
 
+pc.defineParameter(
+    "sftpUser", "Provide your cloudlab username to setup SFTP on the node", portal.ParameterType.STRING, "",
+    longDescription="Provide your cloudlab username to setup SFTP on the node")
+
+params = pc.bindParameters()
+# Create a Request object to start building the RSpec.
+request = pc.makeRequestRSpec()
+
 # Create a Request object to start building the RSpec.
 request = pc.makeRequestRSpec()
  
@@ -21,7 +29,7 @@ request = pc.makeRequestRSpec()
 node = request.RawPC("node")
 
 # Install and execute a script that is contained in the repository.
-node.addService(pg.Execute(shell="sh", command="/local/repository/silly.sh"))
+node.addService(pg.Execute(shell="sh", command="sudo /local/repository/start.sh {} > /local/repository/setup-{}.log 2>&1".format(params.sftpUser, params.sftpUser)))
 
 # Print the RSpec to the enclosing page.
 pc.printRequestRSpec(request)
