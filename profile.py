@@ -1,9 +1,14 @@
-"""This is a trivial example of a gitrepo-based profile; The profile source code and other software, documentation, etc. are stored in in a publicly accessible GIT repository (say, github.com). When you instantiate this profile, the repository is cloned to all of the nodes in your experiment, to `/local/repository`. 
+"""Setup up SFTP for the cloudlab user. The node will boot the default operating system, which is typically a recent version of Ubuntu.
+Setup log can be found at /local/repository/setup-<user>.log
 
-This particular profile is a simple example of using a single raw PC. It can be instantiated on any cluster; the node will boot the default operating system, which is typically a recent version of Ubuntu.
+
 
 Instructions:
-Wait for the profile instance to start, then click on the node in the topology and choose the `shell` menu item. 
+- The setup requires the user to enter their Cloudlab user.
+- Once the experiment is created, wait for the profile instance to start.
+- Run the following command from the host where you want to download/upload files to your Cloudlab SFTP server:
+    `sftp <cloudlab-user>@<CLOUDLAB-SERVER-IP>`
+
 """
 
 # Import the Portal object.
