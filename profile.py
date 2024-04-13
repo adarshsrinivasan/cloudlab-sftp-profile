@@ -15,7 +15,7 @@ import geni.rspec.pg as pg
 pc = portal.Context()
 
 pc.defineParameter(
-    "sftpUser", "Provide your cloudlab username to setup SFTP on the node", portal.ParameterType.STRING, "",
+    "sftpUser", "Provide your cloudlab username to setup SFTP on the node", portal.ParameterType.STRING, "root",
     longDescription="Provide your cloudlab username to setup SFTP on the node")
 
 params = pc.bindParameters()
