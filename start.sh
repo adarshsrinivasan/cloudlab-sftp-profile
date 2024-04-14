@@ -31,7 +31,7 @@ echo -e "$SFTP_USER_PWD\n$SFTP_USER_PWD" | sudo passwd $SFTP_USER
 
 sudo mkdir -p /srv/$SFTP_USER
 
-sudo chmod g+rx /srv/$SFTP_USER
+sudo chmod 777 /srv/$SFTP_USER
 
 sudo mkdir -p /srv/$SFTP_USER/data
 
