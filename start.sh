@@ -31,7 +31,7 @@ echo -e "$SFTP_USER_PWD\n$SFTP_USER_PWD" | sudo passwd $SFTP_USER
 
 sudo mkdir -p /var/sftp/$SFTP_USER
 
-sudo chmod 770 /var/sftp/$SFTP_USER
+sudo chmod 776 /var/sftp/$SFTP_USER
 
 sudo chown $SFTP_USER:$SFTP_USER /var/sftp/$SFTP_USER
 
