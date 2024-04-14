@@ -25,15 +25,13 @@ sudo systemctl restart sshd
 
 sudo groupadd $SFTP_USER
 
-sudo useradd -g $SFTP_USER -d /srv/$SFTP_USER -s /sbin/nologin $SFTP_USER
+sudo useradd -g $SFTP_USER -d /var/sftp/$SFTP_USER -s /sbin/nologin $SFTP_USER
 
 echo -e "$SFTP_USER_PWD\n$SFTP_USER_PWD" | sudo passwd $SFTP_USER
 
-sudo mkdir -p /srv/$SFTP_USER
+sudo mkdir -p /var/sftp/$SFTP_USER
 
-sudo chmod 777 /srv/$SFTP_USER
-
-sudo mkdir -p /srv/$SFTP_USER/data
+sudo chmod 700 /var/sftp/*
 
 sudo chown $SFTP_USER:$SFTP_USER /srv/$SFTP_USER/data
 
