@@ -7,6 +7,7 @@ Instructions:
 - Once the experiment is created, wait for the profile instance to start.
 - Run the following command from the host where you want to download/upload files to the Cloudlab SFTP server:
     `sftp <sftp-user>@<CLOUDLAB-SERVER-IP>`
+- The sftp chroot path is `/var/sftp/`
 
 """
 
