@@ -14,7 +14,7 @@ sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/
 sudo tee -a /etc/ssh/sshd_config > /dev/null <<EOT
 
 Match Group $SFTP_USER
-ChrootDirectory /var/sftp
+ChrootDirectory /var/sftp/$SFTP_USER
 X11Forwarding no
 AllowTcpForwarding no
 ForceCommand internal-sftp
@@ -31,7 +31,7 @@ echo -e "$SFTP_USER_PWD\n$SFTP_USER_PWD" | sudo passwd $SFTP_USER
 
 sudo mkdir -p /var/sftp/$SFTP_USER
 
-sudo chmod 700 /var/sftp/*
+sudo chmod 777 /var/sftp/$SFTP_USER
 
 sudo chown $SFTP_USER:$SFTP_USER /srv/$SFTP_USER/data
 
