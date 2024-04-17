@@ -5,9 +5,9 @@ printf "Startup script - $1 $2 \n"
 export SFTP_USER=$1
 export SFTP_USER_PWD=$2
 
-sudo apt update
+sudo apt update -y
 
-sudo apt install ssh
+sudo apt install ssh -y
 
 sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 
